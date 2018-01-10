@@ -1,6 +1,6 @@
-# StatesNg
+# graphQL API
 
-graphQL API for States and Local Goverment Areas in Nigeria
+graphQL API
 
 ## License
 
