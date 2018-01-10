@@ -23,7 +23,7 @@ const postSchema = new mongoose.Schema({
     ref: 'User',
     required: 'Blog Post Should have a valid User!',
   },
-});
+}, { collection: 'post', timestamps: true });
 // Define Our Indexes for quick queries and searches
 postSchema.index({
   title: 'text',

@@ -1,11 +1,12 @@
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const logger = require('morgan');
-const promisify = require('es6-promisify');
 
 const routes = require('./routes/index');
 
+
 // GraphQL Schema
+import schema from './graphql';
 
 
 const app = express();

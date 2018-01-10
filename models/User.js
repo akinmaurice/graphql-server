@@ -16,6 +16,6 @@ const userSchema = new Schema({
     required: 'Please Supply a name!',
     trim: true,
   },
-});
+}, { collection: 'user', timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);
