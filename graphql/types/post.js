@@ -26,7 +26,7 @@ export const postType = new GraphQLObjectType({
 
 
 export const postInputType = new GraphQLInputObjectType({
-  name: 'Post_Input_Type',
+  name: 'PostInput',
   description: 'Create New Post',
   fields: () => ({
     author: {

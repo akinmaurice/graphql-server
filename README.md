@@ -3,7 +3,7 @@
 graphQL Server with Mongo DB (Mongoose), Node JS and Express JS
 
 
-## Getting Started
+# Getting Started
 ```
 1. git clone https://github.com/akinmaurice/graphql-server.git
 2. cd graphql-server
@@ -16,23 +16,76 @@ graphQL Server with Mongo DB (Mongoose), Node JS and Express JS
 The above will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 
-## Example GraphQL Query
+# USERS
+
+## Example GraphQL Query to get all Users
 
 ```
 query {
-  User (id: "5a5665d101e39d6d4d7576c1"){
+  Users {
+    email
     name
   }
 }
 ```
 
-## Example Response
+## Example Response to get all Users
+
+```
+{
+  "data": {
+    "Users": [
+      {
+        "email": "akin@gmail.com",
+        "name": "Akintayo Akinyemi"
+      },
+      {
+        "email": "akinyemi@gmail.com",
+        "name": "Akin Maurice"
+      },
+      {
+        "email": "akingithub@gmail.com",
+        "name": "John Doe"
+      }
+    ]
+  }
+}
+```
+
+
+## Example GraphQL Query to get a single User
+
+```
+query{
+  User(id: "5a5667d0763358725e13a65c") {
+    email
+    name
+    posts {
+      title
+      content
+    }
+  }
+}
+```
+
+## Example Response to get a single User
 
 ```
 {
   "data": {
     "User": {
-      "name": "Akintayo Akinyemi"
+      "email": "akinyemi@gmail.com",
+      "name": "John Doe",
+      "posts": [
+        {
+          "title": "Sample POst Test",
+          "content": "Sample Post Content"
+        },
+        {
+          "title": "Sample Post Test 2",
+          "content": "Sample Post Contgigbgkgent"
+        }
+      ]
     }
   }
 }
@@ -59,6 +112,86 @@ mutation{
       "name": "John Doe"
     }
   }
+}
+```
+
+
+## Example GraphQL Mutation to Update User
+
+```
+mutation {
+  UpdateUser(
+    id: "5a5667d0763358725e13a65c",
+    data: {
+      name: "Akin Maurice"
+    }
+  )
+}
+```
+
+## Example GraphQL Mutation Update User Response
+
+```
+{
+  "data": {
+    "UpdateUser": {
+      "email": "akinyemi@gmail.com",
+      "name": "Akin Maurice"
+    }
+  }
+}
+```
+
+## Example GraphQL Mutation to Delete User
+
+```
+mutation {
+  DeleteUser (id: "5a5667d0763358725e13a65c")
+}
+```
+
+## Example GraphQL Mutation Response to Delete User
+
+```
+{
+  "data": {
+    "DeleteUser": {
+      "email": "akinyemi@gmail.com",
+      "name": "Akin Maurice"
+    }
+  }
+}
+```
+
+
+# POSTS
+
+## Example GraphQL Mutation to Create Post
+
+```
+mutation {
+  Addpost (data: {
+  author: "5a5667d0763358725e13a65c",
+    title: "Sample Post Test 2",
+    content: "Sample Post Contgigbgkgent"
+  })
+}
+
+```
+
+## Example GraphQL Mutation to Create Post Response
+
+```
+{
+  {
+  "data": {
+    "Addpost": {
+      "author": "5a5667d0763358725e13a65c",
+      "title": "Sample Post Test",
+      "content": "Sample Post Confhgjhghtgigbgkgent"
+    }
+  }
+}
 }
 ```
 

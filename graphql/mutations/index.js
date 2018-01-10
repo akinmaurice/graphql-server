@@ -3,6 +3,6 @@ import postMutation from './post';
 
 export default {
   ...userMutation,
-  postMutation,
+  ...postMutation,
 };
 
