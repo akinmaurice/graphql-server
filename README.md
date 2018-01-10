@@ -2,6 +2,18 @@
 
 graphQL Server with Mongo DB (Mongoose), Node JS and Express JS
 
+
+## Getting Started
+```
+1. git clone https://github.com/akinmaurice/graphql-server.git
+2. cd graphql-server
+3. npm install
+4. npm start
+```
+
+The above will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+
 ## Example GraphQL Query
 
 ```
