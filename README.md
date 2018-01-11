@@ -195,6 +195,121 @@ mutation {
 }
 ```
 
+## Example GraphQL Query to List all Posts
+
+```
+query {
+  # List All Posts
+  Posts {
+    title
+    content
+    comments {
+      email
+      name
+      comment
+    }
+  }
+}
+```
+
+## Example GraphQL Response to List all Posts
+
+```
+{
+  "data": {
+    "Posts": [
+      {
+        "title": "Sample Post Test",
+        "content": "Sample Post Content",
+        "comments": [
+          {
+            "email": "akinyemi@gmai.com",
+            "name": "Akintayo Akinyemi",
+            "comment": "First Comment For the Post"
+          }
+        ]
+      },
+      {
+        "title": "Sample Post Test 2",
+        "content": "Sample Post Contgigbgkgent",
+        "comments": []
+      }
+    ]
+  }
+}
+```
+
+## Example GraphQL Query to List a single Post
+
+```
+query {
+  # List All Posts
+  Post(id: "5a56a3b9c119431217a372e9") {
+    title
+    content
+    comments {
+      email
+      name
+      comment
+    }
+  }
+}
+```
+
+## Example GraphQL Response to List a single Post
+
+```
+{
+  "data": {
+    "Post": [
+      {
+        "title": "Sample Post Test",
+        "content": "Sample Post Content",
+        "comments": [
+          {
+            "email": "akinyemi@gmai.com",
+            "name": "Akintayo Akinyemi",
+            "comment": "First Comment For the Post"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+# Comment
+
+
+## Example GraphQL Mutation to Create Comment
+
+```
+mutation {
+  Addcomment (data: {
+    article: "5a56a3b9c119431217a372e9",
+    name: "Akintayo Akinyemi",
+    email: "akinyemi@gmai.com",
+    comment: "First Comment For the Post"
+  })
+}
+```
+
+## Example GraphQL Mutation to Create Comment Response
+
+```
+{
+  "data": {
+    "Addcomment": {
+      "article": "5a56a3b9c119431217a372e9",
+      "email": "akinyemi@gmai.com",
+      "name": "Akintayo Akinyemi",
+      "comment": "First Comment For the Post"
+    }
+  }
+}
+```
+
+
 
 # Used Technologies
 * GraphQL
